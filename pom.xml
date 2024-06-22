@@ -25,6 +25,8 @@
         <module>eureka-server</module>
 		<module>books-client</module>
 		<module>api-gateway</module>
+		<module>readers-client</module>
+		<module>issues-client</module>
 	</modules>
     <scm>
 		<connection/>

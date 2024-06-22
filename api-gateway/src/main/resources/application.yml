@@ -7,17 +7,16 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#          lower-case-service-id: true
-      routes:
-        - id: booksRoute
-          uri: http://localhost:8082
-          predicates:
-            - Path=/books-client/**
-          filters:
-            - RewritePath=/booksClient/(?<remaining>.*), /$\{remaining}
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes[0]:
+          id: books
+          uri: lb://books-client
+          predicates[0]: Path=/books
+          predicates[1]: Method=GET
+
 
 # url, где будет происходить регистрация микросервисов и другие важные действия
 eureka:
