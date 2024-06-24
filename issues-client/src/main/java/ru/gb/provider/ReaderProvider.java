@@ -19,14 +19,6 @@ public class ReaderProvider {
                 .build();
     }
 
-//    public List<Reader> getAllReaders() {
-//        List<Reader> readersList = webClient.get()
-//                .uri("http://reders-client/readers")
-//                .retrieve()
-//                .bodyToFlux(Reader.class).collectList().block();
-//
-//        return readersList;
-//    }
     public Optional<Reader> getReaderById(Long id) {
         Reader reader = webClient.get()
                 .uri("http://readers-client/readers/{id}", id)

@@ -13,9 +13,25 @@ spring:
           lower-case-service-id: true
       routes[0]:
           id: books
-          uri: lb://books-client
-          predicates[0]: Path=/books
-          predicates[1]: Method=GET
+          uri: http://localhost:8083
+          predicates:
+            - Path=/books-client/**
+          filters:
+            - RewritePath=/books-client/(?<remaining>.*),/$\{remaining}
+      routes[1]:
+        id: readers
+        uri: http://localhost:8084
+        predicates:
+          - Path=/readers-client/**
+        filters:
+          - RewritePath=/readers-client/(?<remaining>.*),/$\{remaining}
+      routes[2]:
+        id: issues
+        uri: http://localhost:8085
+        predicates:
+          - Path=/issues-client/**
+        filters:
+          - RewritePath=/issues-client/(?<remaining>.*),/$\{remaining}
 
 
 # url, где будет происходить регистрация микросервисов и другие важные действия

@@ -42,9 +42,9 @@ public class IssuerService {
         }
         // можно проверить, что у читателя нет книг на руках (или его лимит не превышает в Х книг)
 
-        if (issueRepository.getAllIssueByReaderId(issue.getReaderId()).size() >= limitBooks) {
-            throw new RuntimeException("пользователь взял допустимое колличество книг");
-        }
+//        if (issueRepository.getAllIssueByReaderId(issue.getReaderId()).size() >= limitBooks) {
+//            throw new RuntimeException("пользователь взял допустимое колличество книг");
+//        }
         Issue newissue = new Issue(issue.getBookId(), issue.getReaderId());
         newissue.setIssuedAt(LocalDateTime.now());
         issueRepository.save(newissue);

@@ -30,8 +30,8 @@ public class IssuerController {
             issue = service.saveIssue(issue);
         } catch (NoSuchElementException e) {
             return ResponseEntity.notFound().build();
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+//        } catch (RuntimeException e) {
+//            return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(issue);
