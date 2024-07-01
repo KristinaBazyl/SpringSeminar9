@@ -4,8 +4,9 @@ import org.springframework.cloud.client.loadbalancer.reactive.ReactorLoadBalance
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.awt.print.Book;
-import java.util.List;
+
+
+import ru.gb.model.Book;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,14 +20,7 @@ public class BookProvider {
                 .build();
     }
 
-//    public List<Book> getAllBooks() {
-//        List<Book> bookList = webClient.get()
-//                .uri("http://books-client/books")
-//                .retrieve()
-//                .bodyToFlux(Book.class).collectList().block();
-//
-//        return bookList;
-//    }
+
     public Optional<Book> getBookById(Long id) {
         Book book = webClient.get()
                 .uri("http://books-client/books/{id}", id)

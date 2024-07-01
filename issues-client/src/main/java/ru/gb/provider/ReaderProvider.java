@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 
-import java.io.Reader;
+import ru.gb.model.Reader;
 import java.util.List;
 import java.util.Optional;
 

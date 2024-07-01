@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.gb.aspects.Timer;
 import ru.gb.model.Issue;
 import ru.gb.service.IssuerService;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
+@Timer
 @Slf4j
 @RestController
 @RequestMapping("/issues")

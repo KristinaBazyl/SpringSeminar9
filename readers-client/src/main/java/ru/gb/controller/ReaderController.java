@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 //import ru.gb.model.Issue;
+import ru.gb.aspects.Timer;
 import ru.gb.model.Reader;
 import ru.gb.service.ReaderService;
 
@@ -33,6 +34,7 @@ public class ReaderController {
     }
 
     //получить список всех читателей
+    @Timer
     @GetMapping
     public ResponseEntity<List<Reader>> getAllReaders() {
         return ResponseEntity.ok(readerService.getAllReaders()); }

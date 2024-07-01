@@ -2,6 +2,7 @@ package ru.gb.model;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 
 import java.time.LocalDateTime;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 /**
  * Запись о факте выдачи книги (в БД)
  */
-// @Data
+ @Data
  @Entity
  @Table(name = "issues")
 public class Issue {

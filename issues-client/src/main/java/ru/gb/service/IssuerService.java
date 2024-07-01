@@ -45,10 +45,9 @@ public class IssuerService {
 //        if (issueRepository.getAllIssueByReaderId(issue.getReaderId()).size() >= limitBooks) {
 //            throw new RuntimeException("пользователь взял допустимое колличество книг");
 //        }
-        Issue newissue = new Issue(issue.getBookId(), issue.getReaderId());
-        newissue.setIssuedAt(LocalDateTime.now());
-        issueRepository.save(newissue);
-        return newissue;
+//        Issue newissue = new Issue(issue.getBookId(), issue.getReaderId());
+        issue.setIssuedAt(LocalDateTime.now());
+        return issueRepository.save(issue);
     }
 
     // показать список всех заявок

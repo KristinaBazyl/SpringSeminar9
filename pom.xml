@@ -27,7 +27,8 @@
 		<module>api-gateway</module>
 		<module>readers-client</module>
 		<module>issues-client</module>
-	</modules>
+        <module>starter</module>
+    </modules>
     <scm>
 		<connection/>
 		<developerConnection/>
